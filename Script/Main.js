@@ -3,7 +3,15 @@ window.onerror = errorHandle;
 window.oncontextmenu = rightClick;
 
 function start() {
-    canvas 
+    canvas = document.getElementById('game');
+    context = canvas.getContext('2d');
+    canvasRect = canvas.getBoundingRectClient();
+
+    loop();
+}
+
+function loop() {
+    
 }
 
 function errorHandle() {
