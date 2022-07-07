@@ -24,7 +24,12 @@ function displayTitle() {
 function mouseUpTitle(x, y) {
     if (menu === false) {
         if (state === '') {
-            
+            if (pointInsideRect(x, y, UITitle.startGameText)) {
+                scene = 'LevelSelect';
+            }
         }
     }
+}
+
+function keyDownTitle(key) {
 }
