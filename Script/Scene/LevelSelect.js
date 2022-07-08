@@ -1,5 +1,8 @@
 var UILevelSelect = {
     titleText : [8, 48],
+    backButton : [928, 32, 64, 64],
+    levelList : [[128, 128, 128, 128], [320, 128, 128, 128], [512, 128, 128, 128],
+                 [128, 320, 128, 128], [320, 320, 128, 128], [512, 320, 128, 128]]
 };
 
 function loopLevelSelect() {
@@ -16,11 +19,26 @@ function displayLevelSelect() {
 
     context.fillText(`Select Level`, UILevelSelect.titleText[0], UILevelSelect.titleText[1]);
 
-
+    for (var i = 0; i < 6; i++) {
+        context.strokeRect(UILevelSelect.levelList[i][0], UILevelSelect.levelList[i][1], UILevelSelect.levelList[i][2], UILevelSelect.levelList[i][3]);
+    }
 }
 
 function mouseUpLevelSelect(x, y) {
+    if (menu === false) {
+        if (state === '') {
+            if (pointInsideRectArray(x, y, UILevelSelect.backButton)) {
+                scene = 'Title';
+            }
 
+            for (var i = 0; i < 6; i++) {
+                if (pointInsideRectArray(x, y, UILevelSelect.levelList[i])) {
+                    adventure.selectedLevel = i;
+                    scene = 'CharacterSelect';
+                }
+            }
+        }
+    }
 }
 
 function keyDownLevelSelect(key) {

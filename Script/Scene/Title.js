@@ -24,7 +24,7 @@ function displayTitle() {
 function mouseUpTitle(x, y) {
     if (menu === false) {
         if (state === '') {
-            if (pointInsideRect(x, y, UITitle.startGameText)) {
+            if (pointInsideRectArray(x, y, UITitle.startGameButton)) {
                 scene = 'LevelSelect';
             }
         }

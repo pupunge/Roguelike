@@ -9,6 +9,10 @@ var pause = false;
 
 var inventorySection = 'Equipment';
 
+var adventure = {
+    selectedLevel : -1,
+};
+
 var player = {
 
 };
